@@ -57,7 +57,7 @@ const images = [
 ]
 
 //selezionare l'immagine attiva
-let activeImages = 0;
+let activeImage = 0;
 
 //selezionare il container in dom dove inserire le immagini
 const imagesElement = document.querySelector('.slider > .images');
@@ -66,16 +66,53 @@ console.log(imagesElement);
 //creare un ciclo che incrementi il numero dell'immagine attiva
 for (let i = 0; i < images.length; i++) {
     const imgSrc = images[i];
-    console.log(imgSrc);
-    const imgElement = `<img class="${i === activeImages ? 'active' : '' }" src="${imgSrc}" alt="">`;
+    const imgElement = `<img class="${i === activeImage ? 'active' : '' }" src="${imgSrc}" alt="">`;
     console.log(imgElement);
 
     //inserire l'immagine richiamando l'elemento in dom selezionato
     imagesElement.insertAdjacentHTML('beforeend', imgElement);
 }
+
 //selezionare tutte le immagini
-const slideImagesElements = document.querySelectorAll('.slider > .images > img')
+const sliderImagesElements = document.querySelectorAll('.slider > .images > img')
+console.log(sliderImagesElements);
 
+//creare l'addEventListener per il click sui button
+const nextElement = document.querySelector('.next');
+nextElement.addEventListener('click', function(){
+    console.log('check next click');
 
-//assegnare la classe active all'immagine che deve essere attiva
-//togliere la classe active all'immagine che non deve essere più attiva
+    //selezionare la slide attiva
+    const currentSlide = sliderImagesElements[activeImage];
+    console.log(currentSlide);
+
+    //rimuovere la classe active dall'immagine attiva
+    currentSlide.classList.remove('active');
+
+    //incrementare il valore dell'activeImage
+    activeImage++
+
+    //aggiungere la classe active alla prossima immagine
+    const nextImage = sliderImagesElements[activeImage];
+    nextImage.classList.add('active');
+})
+
+const prevElement = document.querySelector('.prev');
+prevElement.addEventListener('click', function(){
+    console.log('check prev click');
+
+    //selezionare la slide attiva
+    const currentSlide = sliderImagesElements[activeImage];
+    console.log(currentSlide);
+
+    //rimuovere la classe active dall'immagine attiva
+    currentSlide.classList.remove('active');
+
+    //incrementare il valore dell'activeImage
+    activeImage--
+
+    //aggiungere la classe active alla prossima immagine
+    const prevImage = sliderImagesElements[activeImage];
+    prevImage.classList.add('active');
+
+})
