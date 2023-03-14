@@ -46,8 +46,36 @@ Tools:
 */
 
 //creare un markup statico in HTML da sostituire in un secondo momento da uno dinamico
+
 //creare l'array contenente le immagini
+const images = [
+    './assets/img/01.webp',
+    './assets/img/02.webp',
+    './assets/img/03.webp',
+    './assets/img/04.webp',
+    './assets/img/05.webp'
+]
+
+//selezionare l'immagine attiva
+let activeImages = 0;
+
+//selezionare il container in dom dove inserire le immagini
+const imagesElement = document.querySelector('.slider > .images');
+console.log(imagesElement);
+
 //creare un ciclo che incrementi il numero dell'immagine attiva
-//creare una classe active
+for (let i = 0; i < images.length; i++) {
+    const imgSrc = images[i];
+    console.log(imgSrc);
+    const imgElement = `<img class="${i === activeImages ? 'active' : '' }" src="${imgSrc}" alt="">`;
+    console.log(imgElement);
+
+    //inserire l'immagine richiamando l'elemento in dom selezionato
+    imagesElement.insertAdjacentHTML('beforeend', imgElement);
+}
+//selezionare tutte le immagini
+const slideImagesElements = document.querySelectorAll('.slider > .images > img')
+
+
 //assegnare la classe active all'immagine che deve essere attiva
 //togliere la classe active all'immagine che non deve essere più attiva
