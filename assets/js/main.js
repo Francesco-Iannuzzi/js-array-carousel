@@ -47,7 +47,7 @@ Tools:
 
 //creare un markup statico in HTML da sostituire in un secondo momento da uno dinamico
 
-//creare l'array contenente le immagini
+//creare l'array contenente le immagini principali
 const images = [
     './assets/img/01.webp',
     './assets/img/02.webp',
@@ -56,7 +56,7 @@ const images = [
     './assets/img/05.webp'
 ]
 
-//selezionare l'immagine attiva
+//selezionare l'immagine principale attiva
 let activeImage = 0;
 
 //selezionare il container in dom dove inserire le immagini
@@ -74,7 +74,7 @@ for (let i = 0; i < images.length; i++) {
 }
 
 //selezionare tutte le immagini
-const sliderImagesElements = document.querySelectorAll('.slider > .images > img')
+const sliderImagesElements = document.querySelectorAll('.slider > .images > img');
 console.log(sliderImagesElements);
 
 //creare l'addEventListener per il click sui button
@@ -104,7 +104,7 @@ prevElement.addEventListener('click', function(){
     //selezionare la slide attiva
     const currentSlide = sliderImagesElements[activeImage];
     console.log(currentSlide);
-
+    
     //rimuovere la classe active dall'immagine attiva
     currentSlide.classList.remove('active');
 
@@ -116,3 +116,28 @@ prevElement.addEventListener('click', function(){
     prevImage.classList.add('active');
 
 })
+
+//Bonus:2
+
+//creare l'array contente le immagini in thumbnail
+const thumbImages = [
+    '<img src="./assets/img/01.webp" alt="">',
+    '<img src="./assets/img/02.webp" alt="">',
+    '<img src="./assets/img/03.webp" alt="">',
+    '<img src="./assets/img/04.webp" alt="">',
+    '<img src="./assets/img/05.webp" alt="">'
+]
+
+//selezionare l'immagine in thumbnail attiva
+let activeThumbImage = 0;
+
+//selezionare il container delle immagini in thumbnail
+const thumbImagesEl = document.querySelectorAll('.thumbnail > .thumb_images > img');
+console.log(thumbImagesEl);
+
+//creare un ciclo che incrementi il numero dell'immagine attiva in thumbnail
+for (let index = 0; index < thumbImages.length; index++) {
+    const thumbImgSrc = thumbImages[index];
+    console.log(thumbImgSrc);
+
+}

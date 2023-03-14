@@ -1,11 +1,16 @@
+body
+{
+    background-color: black;
+}
+
 .images
 {
-    height: 500px;
+    height: 600px;
 }
 
 .images img
 {
-    height: 500px;
+    height: 600px;
     width: 100%;
     object-fit: cover;
 }
@@ -17,14 +22,19 @@
 
 .thumb_images
 {
-    height: 500px;
+    height: 600px;
     position: relative;
 }
 
 .thumb_images img
 {
-    height: 100px;
+    height: calc(100% / 5);
     object-fit: cover;
+}
+
+.images img:not(.active)
+{
+    opacity: 10%;
 }
 
 .prev
