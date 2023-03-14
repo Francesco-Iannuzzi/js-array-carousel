@@ -32,3 +32,22 @@ Abbiamo completato ormai da qualche giorno la sessione HTML e CSS, se non ci ric
 - Al momento giusto (ihihhi starà a voi capire quale) rispondete a questa domanda: "Quanti cicli servono?"
 
 */
+
+/*
+Tools:
+- const / let
+- array
+- for loop
+- operators
+- increment / decrement
+- document.querySelector / document.getElementById
+- inserAdjacentHTML / innerHTML / document.createElement
+
+*/
+
+//creare un markup statico in HTML da sostituire in un secondo momento da uno dinamico
+//creare l'array contenente le immagini
+//creare un ciclo che incrementi il numero dell'immagine attiva
+//creare una classe active
+//assegnare la classe active all'immagine che deve essere attiva
+//togliere la classe active all'immagine che non deve essere più attiva
