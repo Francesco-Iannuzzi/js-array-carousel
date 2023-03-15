@@ -66,7 +66,7 @@ console.log(imagesElement);
 //creare un ciclo che incrementi il numero dell'immagine attiva
 for (let i = 0; i < images.length; i++) {
     const imgSrc = images[i];
-    const imgElement = `<img class="${i === activeImage ? 'active' : '' }" src="${imgSrc}" alt="">`;
+    const imgElement = `<img class="${i === activeImage ? 'active' : ''}" src="${imgSrc}" alt="">`;
     console.log(imgElement);
 
     //inserire l'immagine richiamando l'elemento in dom selezionato
@@ -79,7 +79,7 @@ console.log(sliderImagesElements);
 
 //creare l'addEventListener per il click sui button
 const nextElement = document.querySelector('.next');
-nextElement.addEventListener('click', function(){
+nextElement.addEventListener('click', function () {
     console.log('check next click');
 
     //selezionare la slide attiva
@@ -89,10 +89,12 @@ nextElement.addEventListener('click', function(){
     //rimuovere la classe active dall'immagine attiva
     currentSlide.classList.remove('active');
 
-    //controllare se il valore di activeImage è uguale 0
+    //controllare se il valore di activeImage è array.lenght - 1
     if (activeImage === sliderImagesElements.length - 1) {
-        //se è vero activeImage deve essere settato ad array.length -1
+
+        //se è vero activeImage deve essere settato a 0
         activeImage = 0
+
     } else {
         //incrementare il valore dell'activeImage
         activeImage++
@@ -104,23 +106,24 @@ nextElement.addEventListener('click', function(){
 })
 
 const prevElement = document.querySelector('.prev');
-prevElement.addEventListener('click', function(){
+prevElement.addEventListener('click', function () {
     console.log('check prev click');
 
     //selezionare la slide attiva
     const currentSlide = sliderImagesElements[activeImage];
     console.log(currentSlide);
-    
+
     //rimuovere la classe active dall'immagine attiva
     currentSlide.classList.remove('active');
 
     //controllare se il valore di activeImage è uguale 0
     if (active === 0) {
-        //se è vero activeImage deve essere settato ad array.length -1
+        //se è vero activeImage deve essere settato ad array.length - 1
+
         activeImage = sliderImagesElements.length - 1
     } else {
         //incrementare il valore dell'activeImage
-        activeImage-- 
+        activeImage--
     }
 
     //aggiungere la classe active alla prossima immagine
