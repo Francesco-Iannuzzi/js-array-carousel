@@ -89,8 +89,14 @@ nextElement.addEventListener('click', function(){
     //rimuovere la classe active dall'immagine attiva
     currentSlide.classList.remove('active');
 
-    //incrementare il valore dell'activeImage
-    activeImage++
+    //controllare se il valore di activeImage è uguale 0
+    if (activeImage === sliderImagesElements.length - 1) {
+        //se è vero activeImage deve essere settato ad array.length -1
+        activeImage = 0
+    } else {
+        //incrementare il valore dell'activeImage
+        activeImage++
+    }
 
     //aggiungere la classe active alla prossima immagine
     const nextImage = sliderImagesElements[activeImage];
@@ -108,8 +114,14 @@ prevElement.addEventListener('click', function(){
     //rimuovere la classe active dall'immagine attiva
     currentSlide.classList.remove('active');
 
-    //incrementare il valore dell'activeImage
-    activeImage--
+    //controllare se il valore di activeImage è uguale 0
+    if (active === 0) {
+        //se è vero activeImage deve essere settato ad array.length -1
+        activeImage = sliderImagesElements.length - 1
+    } else {
+        //incrementare il valore dell'activeImage
+        activeImage-- 
+    }
 
     //aggiungere la classe active alla prossima immagine
     const prevImage = sliderImagesElements[activeImage];
